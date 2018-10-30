@@ -14,7 +14,7 @@ var db = mongoose.connection;
 
 var port = process.env.PORT || 8888;
 app.get("/", (req, res) => res.send("Hello World with Express"));
-// app.use("/api", apiRoutes)
+app.use("/api", apiRoutes)
 app.listen(port, function () {
-    console.log("Running challege on port " + port);
+    console.log("Running challenge on port " + port);
 });
