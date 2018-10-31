@@ -49,16 +49,18 @@ exports.new = function(req, res) {
 
 exports.delete = function(req, res) {
   UnitModel.remove({
-    _id: req.params.measureUnit
+    _id: req.params.unit_id
   }, function(err, unit) {
-    if (err)
+    if (err) {
       res.json({
         status: "500",
         message: err,
       });
-    res.json({
-      status: "200",
-      message: "Unit deleted"
-    });
+    } else {
+      res.json({
+        status: "200",
+        message: "Unit deleted"
+      });
+    }
   });
 };

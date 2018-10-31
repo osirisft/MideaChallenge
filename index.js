@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 
 mongoose.connect(dbConfig.db);
 var db = mongoose.connection;
-
 var port = process.env.PORT || dbConfig.port;
+
 app.get("/", (req, res) => res.send("Hello World with Express"));
 app.use("/api", apiRoutes)
 app.listen(port, function () {
