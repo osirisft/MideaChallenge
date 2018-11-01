@@ -1,4 +1,5 @@
 const ShoppingCentreModel = require("../model/shoppingCentreModel");
+const AuditTrailController = require("./AuditTrailController");
 
 exports.index = function(req, res) {
   ShoppingCentreModel.get(function(err, shoppingCentres) {
@@ -37,6 +38,15 @@ exports.new = function(req, res) {
           message: err,
         });
       } else {
+        let data = {
+          "changedBy": "Current user",
+          "operation": "Create",
+          "changedModelName": "Shopping Centre",
+          "changedModelField": "All",
+          "oldValue": "",
+          "newValue": "Create new Shopping Centre " + shoppingCentre._id,
+        };
+        AuditTrailController.new(data);
         res.json({
           status: "200",
           message: "New Shopping centre created!",
@@ -44,16 +54,6 @@ exports.new = function(req, res) {
         });
       }
     });
-
-  // let data={
-  //   "changedBy":"TBD user",
-  //   "operation":"Create",
-  //   "changedModelName":"Unit",
-  //   "changedModelField":"measureUnit",
-  //   "oldValue":"",
-  //   "newValue":unit.measureUnit,
-  // };
-  // AuditTrailController.new(data);
 }
 
 exports.view = function(req, res) {
@@ -112,6 +112,15 @@ exports.delete = function(req, res) {
         message: err,
       });
     } else {
+      let data = {
+        "changedBy": "Current user",
+        "operation": "Delete",
+        "changedModelName": "Shopping Centre",
+        "changedModelField": "All",
+        "oldValue": req.params.shoppingCentre_id,
+        "newValue": "Delete Shopping Centre "
+      };
+      AuditTrailController.new(data);
       res.json({
         status: "200",
         message: "Shopping centre deleted"

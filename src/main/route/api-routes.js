@@ -29,6 +29,12 @@ router.route('/assets/:asset_id')
   .put(assetController.update)
   .delete(assetController.delete);
 
+
+const auditTrailController = require('../controller/auditTrailController');
+router.route('/auditTrails')
+  .get(auditTrailController.index)
+  .post(auditTrailController.new);
+
 const unitController = require('../controller/unitController');
 router.route('/units')
   .get(unitController.index)
