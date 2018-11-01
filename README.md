@@ -3,8 +3,8 @@
 |Requirements | Status |Description
 | ------- | ------| -------|
 |MUST have an API server written in Javascript|DONE|All APIs are implemented by using Node.js |
-|MUST have routes for Shopping Centres|DONE||
-|MUST have routes for Assets|DONE||
+|MUST have routes for Shopping Centres|DONE|Support all CRUD operations|
+|MUST have routes for Assets|DONE|Support all CRUD operations|
 |MUST persist data to a database|DONE|Use MongoDB as database to persist data|
 |SHOULD be secured against anonymous access and track which user makes changes to the data|60%|Implemented the "Audit Trail" function for Entity Shopping Centre. All the "Create" and "Delete" operations for Shopping Centre are recorded|
 |SHOULD allow marking Asses "inactive" for maintenance and re-active the later|DONE||
@@ -51,11 +51,16 @@
 cd folder .../MideaChallenge/  
 Run "nodemon server"  
 1.1 API for Shopping Centres  
- ![Alt text](/Documents/screenShot/shoppingCentre.png)
+ ![Alt text](/Documents/screenShot/shoppingCentre.png)  
+ ![Alt text](/Documents/screenShot/shoppingCentreDel.png)
 1.2 API for Asset
 ![Alt text](/Documents/screenShot/asset.png)
 1.3 API for AuditTrail  
 ![Alt text](/Documents/screenShot/auditTrail.png)
+1.4 API for Status
+![Alt text](/Documents/screenShot/status.png)
+1.5 API for Unit
+![Alt text](/Documents/screenShot/unitPost.png)
 
 2. Front-end Usage  
 cd folder .../MideaChallenge/client
