@@ -2,6 +2,7 @@ const AssetModel = require("../model/AssetModel");
 
 exports.index = function(req, res) {
   AssetModel.get(function(err, assets) {
+    console.log(req.query);
     if (err) {
       res.json({
         status: "500",
@@ -28,6 +29,7 @@ exports.new = function(req, res) {
   }
 
   let asset = new AssetModel();
+  asset.name = req.body.name;
   asset.location = req.body.location;
   asset.status = req.body.status;
   asset.unit = req.body.unit;

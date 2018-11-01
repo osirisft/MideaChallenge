@@ -31,6 +31,7 @@ exports.new = function(req, res) {
     shoppingCentre.city = req.body.city,
     shoppingCentre.address = req.body.address,
     shoppingCentre.postcode = req.body.postcode,
+    shoppingCentre.assets = req.body.assets,
     shoppingCentre.save(function(err) {
       if (err) {
         res.json({

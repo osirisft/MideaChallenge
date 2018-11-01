@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 let schemaAsset = {
+  name: {
+    type: String,
+    required: true
+  },
   location: {
     type: String,
     required: true

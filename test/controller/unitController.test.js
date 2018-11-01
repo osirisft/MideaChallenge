@@ -17,7 +17,7 @@ describe("UT for unitController", function() {
 
     it("should send all units", function() {
       let a = {
-        measureUnit: "1",
+        name: "1",
         unitTxt: "txt"
       };
       let b = {
